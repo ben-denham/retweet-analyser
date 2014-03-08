@@ -29,4 +29,9 @@ Usage
 -----
 
 ::
-   python retweet_analysis.py "#keyword" "user1", "user2"
+   python retweet_analyser.py --keywords keyword1 keyword2 --users user1 user2
+
+Authors
+-------
+
+Benjamin Denham (@ben-denham)
