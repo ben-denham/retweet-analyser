@@ -1,11 +1,11 @@
-Retweet Analysis
+Retweet Analyser
 ================
 
 Description
 -----------
 
-Simple tool to graph the relative retweets achieved by different users tweeting
-about a common topic.
+A simple tool to graph the relative retweets achieved by different users
+tweeting about a common topic.
 
 Installation
 ------------
