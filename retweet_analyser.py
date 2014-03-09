@@ -104,7 +104,7 @@ class AnnotationManager(object):
         plt.draw()
 
 
-def graph(data, title, set_style='-o'):
+def graph(data, title, set_style='o'):
     plot_args = []
     labels = []
     annotes = {}
@@ -123,7 +123,7 @@ def graph(data, title, set_style='-o'):
                 annotes[username][tweet.created_at] = {}
 
             annotes[username][tweet.created_at][tweet.retweet_count] = dict(
-                text=u'"{}" - {} retweets - @{} - {}'.format(tweet.text,
+                text=u'"{}" - {} retweets - @{} - {} UTC'.format(tweet.text,
                                                              tweet.retweet_count,
                                                              username,
                                                              tweet.created_at,),
@@ -149,7 +149,7 @@ def main(keywords, users):
     for user in users:
         data[user] = get_tweets(api, keywords, user)
     graph(data, 'Retweet counts for tweets containing: "{}"'.format(
-            '" ",'.join(keywords)))
+            '", "'.join(keywords)))
 
 
 if __name__ == '__main__':
