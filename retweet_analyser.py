@@ -40,6 +40,7 @@ def get_min_id(tweets):
 
 def get_tweets(api, keywords, user):
 
+    keywords = [keyword.lower() for keyword in keywords]
     kwargs = {
         'contributor_details': False,
         'include_rts': False,
@@ -64,9 +65,16 @@ def get_tweets(api, keywords, user):
         else:
             break
 
-    for keyword in keywords:
-        tweets = [tweet for tweet in tweets
-                  if keyword.lower() in tweet.text.lower()]
+    # Iterate over a copy so that we can remove items.
+    for tweet in tweets[:]:
+        tweet_text = tweet.text.lower()
+        keyword_found = False
+        for keyword in keywords:
+            if keyword in tweet_text:
+                keyword_found = True
+                break
+        if not keyword_found:
+            tweets.remove(tweet)
 
     return tweets
 
