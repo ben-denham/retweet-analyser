@@ -21,6 +21,9 @@ package name may differ between distros):
 (On Ubuntu, ``libpng`` and ``freetype`` can be installed with ``sudo apt-get
 build-dep python-matplotlib``)
 
+(On Windows, you can also install pre-requisites with:
+http://sourceforge.net/projects/winpython/files/WinPython_3.3/)
+
 Then run::
 
   pip install -r requirements.txt

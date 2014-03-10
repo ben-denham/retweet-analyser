@@ -99,6 +99,9 @@ class AnnotationManager(object):
             pass
 
         line = event.artist
+        if not line.get_visible():
+            return
+
         ind = event.ind[0]
         username = line.get_url()
         x = line.get_xdata()[ind]
