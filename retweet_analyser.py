@@ -9,9 +9,9 @@ from datetime import datetime
 
 python3 = version_info.major >= 3
 if python3:
-    iteritems = lambda d: d.iteritems()
-else:
     iteritems = lambda d: iter(d.items())
+else:
+    iteritems = lambda d: d.iteritems()
 
 def get_api():
     try:
