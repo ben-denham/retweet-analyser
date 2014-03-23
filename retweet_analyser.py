@@ -144,7 +144,7 @@ def graph(data, title, set_style='o'):
                 y=tweet['retweet_count']
                 )
 
-    lines = plt.plot(*plot_args, picker=5)
+    lines = plt.plot(*plot_args, picker=5, alpha=0.5)
     for key, line in enumerate(lines):
         line.set_url(labels[key])
 
